@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const menuItems = [
-  "Home",
-  "Services",
-  "Portfolio",
-  "Pricing",
-  "About",
-  "Contact",
-  "FAQ",
+  { name: "Home", to: "/" },
+  { name: "Services", to: "/services" },
+  { name: "Portfolio", to: "#" },
+  { name: "Pricing", to: "#" },
+  { name: "About", to: "#" },
+  { name: "Contact", to: "#" },
+  { name: "FAQ", to: "#" },
 ];
 
 const NavBar: React.FC = () => {
@@ -24,10 +25,14 @@ const NavBar: React.FC = () => {
         <ul className="hidden md:flex space-x-6">
           {menuItems.map((item) => (
             <li
-              key={item}
+              key={item.name}
               className="cursor-pointer px-2 py-1 rounded transition-colors duration-200 hover:bg-white/10 hover:text-gray-200"
             >
-              {item}
+              {item.to.startsWith("/") ? (
+                <Link to={item.to}>{item.name}</Link>
+              ) : (
+                <a href={item.to}>{item.name}</a>
+              )}
             </li>
           ))}
         </ul>
@@ -59,10 +64,16 @@ const NavBar: React.FC = () => {
         <ul className="md:hidden flex flex-col bg-[#001F3F] px-6 pb-4 space-y-2 animate-fade-in-down">
           {menuItems.map((item) => (
             <li
-              key={item}
+              key={item.name}
               className="cursor-pointer px-2 py-2 rounded transition-colors duration-200 hover:bg-white/10 hover:text-gray-200"
             >
-              {item}
+              {item.to.startsWith("/") ? (
+                <Link to={item.to} onClick={() => setIsOpen(false)}>
+                  {item.name}
+                </Link>
+              ) : (
+                <a href={item.to}>{item.name}</a>
+              )}
             </li>
           ))}
         </ul>
