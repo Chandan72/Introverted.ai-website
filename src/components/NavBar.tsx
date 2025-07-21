@@ -5,7 +5,7 @@ const menuItems = [
   { name: "Home", to: "/" },
   { name: "Services", to: "/services" },
   { name: "Portfolio", to: "/portfolio" },
-  { name: "Pricing", to: "#" },
+  { name: "Pricing", to: "/pricing" },
   { name: "About", to: "#" },
   { name: "Contact", to: "#" },
   { name: "FAQ", to: "#" },
