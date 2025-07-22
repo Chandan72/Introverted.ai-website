@@ -1,5 +1,6 @@
 import React from "react";
 import myPic from "../assets/team/mypic.png";
+import HeroSection from "../components/HeroSection";
 
 const values = [
 	{
@@ -142,6 +143,11 @@ const values = [
 
 const About: React.FC = () => (
 	<section className="bg-[#F8F9FA] min-h-screen py-12 px-4 flex flex-col items-center">
+		{/* Hero Section */}
+		<HeroSection
+			title="About INTROVERTED.AI"
+			subtitle="Premium AI automation, delivered with trust, simplicity, and quiet excellence."
+		/>
 		{/* Headshot and Bio */}
 		<div className="flex flex-col items-center mb-10">
 			<img

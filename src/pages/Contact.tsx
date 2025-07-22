@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HeroSection from "../components/HeroSection";
 
 const serviceOptions = [
   "Workflow Automation",
@@ -27,6 +28,10 @@ const Contact: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <HeroSection
+        title="Contact Us"
+        subtitle="Let's build your AI advantage. Reach out to our team."
+      />
       {/* Contact Form */}
       <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 flex flex-col">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">Contact Us</h2>
