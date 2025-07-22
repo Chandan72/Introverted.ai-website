@@ -33,9 +33,9 @@ const Home: React.FC = () => {
 
 						{/* Main Headline */}
 						<h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight animate-slideUp">
-							Transform Your Business with
+                            Transform Your Business with Intelifence agents
 							<span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent block mt-2">
-								Intelligent Automation
+								I
 							</span>
 						</h1>
 
