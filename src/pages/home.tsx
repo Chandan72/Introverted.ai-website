@@ -1,133 +1,238 @@
 import React from "react";
-import { motion } from "framer-motion";
-
-const steps = [
-	{
-		title: "Identify",
-		icon: (
-			<svg
-				className="w-10 h-10 text-blue-700 mb-2"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="2"
-				viewBox="0 0 24 24"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-				/>
-			</svg>
-		),
-		desc: "Pinpoint automation opportunities in your business workflows.",
-	},
-	{
-		title: "Educate",
-		icon: (
-			<svg
-				className="w-10 h-10 text-blue-700 mb-2"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="2"
-				viewBox="0 0 24 24"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6"
-				/>
-			</svg>
-		),
-		desc: "Empower your team with AI knowledge and best practices.",
-	},
-	{
-		title: "Develop",
-		icon: (
-			<svg
-				className="w-10 h-10 text-blue-700 mb-2"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="2"
-				viewBox="0 0 24 24"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					d="M3 7v4a1 1 0 001 1h3m10-5h3a1 1 0 011 1v4m-1 4v4a1 1 0 01-1 1h-3m-10-5H4a1 1 0 01-1-1v-4m1 9h3a1 1 0 001-1v-3m10 5h3a1 1 0 001-1v-3"
-				/>
-			</svg>
-		),
-		desc: "Build and deploy custom AI-powered automation solutions.",
-	},
-];
+import { Link } from "react-router-dom";
+import {
+	ChevronRight,
+	Zap,
+	Bot,
+	Brain,
+	Target,
+	CheckCircle,
+	ArrowRight,
+	Play,
+} from "lucide-react";
 
 const Home: React.FC = () => {
 	return (
-		<div className="w-full min-h-screen bg-gradient-to-br from-[#001F3F] via-[#4682B4] to-white flex flex-col">
+		<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
 			{/* Hero Section */}
-			<section className="w-full flex flex-col justify-center items-center text-center py-16 md:py-24 px-4">
-				<motion.h1
-					className="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg"
-					initial={{ opacity: 0, y: 40 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8, type: "spring" }}
-				>
-					We put AI at the center of everything we automate
-				</motion.h1>
-				<motion.p
-					className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10"
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.2, duration: 0.7 }}
-				>
-					Your trusted partner in transforming startups, enterprises, and solo
-					entrepreneurs through intelligent workflow automation
-				</motion.p>
-				<div className="flex flex-col sm:flex-row gap-4 justify-center">
-					<motion.button
-						className="bg-gradient-to-r from-[#001F3F] to-[#4682B4] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 hover:shadow-blue-400/40 transition-all text-lg"
-						whileHover={{ scale: 1.07 }}
-						whileTap={{ scale: 0.97 }}
-					>
-						Start Your AI Transformation
-					</motion.button>
-					<motion.button
-						className="bg-white/90 border border-blue-700 text-blue-700 px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-blue-50 hover:scale-105 transition-all text-lg"
-						whileHover={{ scale: 1.07 }}
-						whileTap={{ scale: 0.97 }}
-					>
-						Schedule Free Consultation
-					</motion.button>
+			<section className="relative overflow-hidden">
+				{/* Animated Background */}
+				<div className="absolute inset-0 opacity-20">
+					<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+					<div className="absolute top-1/3 right-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+					<div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+				</div>
+
+				<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+					<div className="text-center">
+						{/* Badge */}
+						<div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium mb-8 animate-fadeIn">
+							<Zap className="w-4 h-4 mr-2" />
+							AI Automation Agency
+						</div>
+
+						{/* Main Headline */}
+						<h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight animate-slideUp">
+							Transform Your Business with
+							<span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent block mt-2">
+								Intelligent Automation
+							</span>
+						</h1>
+
+						{/* Subheadline */}
+						<p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-slideUp delay-200">
+							We help businesses automate workflows, deploy intelligent chatbots,
+							and implement AI solutions that reduce costs by up to 70% while
+							increasing efficiency exponentially.
+						</p>
+
+						{/* CTA Buttons */}
+						<div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slideUp delay-400">
+							<Link
+								to="/services"
+								className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25"
+							>
+								Get Started Today
+								<ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+							</Link>
+
+							<button className="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+								<Play className="mr-2 w-5 h-5" />
+								Watch Demo
+							</button>
+						</div>
+
+						{/* Stats */}
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-slideUp delay-600">
+							<div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+								<div className="text-3xl font-bold text-white mb-2">70%</div>
+								<div className="text-gray-400">Cost Reduction</div>
+							</div>
+							<div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+								<div className="text-3xl font-bold text-white mb-2">50+</div>
+								<div className="text-gray-400">Successful Projects</div>
+							</div>
+							<div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+								<div className="text-3xl font-bold text-white mb-2">24/7</div>
+								<div className="text-gray-400">AI Support</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
-			{/* 3-Step Section */}
-			<section className="w-full max-w-7xl mx-auto py-16 px-4 mb-12">
-				<motion.div
-					className="grid grid-cols-1 md:grid-cols-3 gap-8"
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
-					variants={{
-						hidden: {},
-						visible: { transition: { staggerChildren: 0.15 } },
-					}}
-				>
-					{steps.map((step, idx) => (
-						<motion.div
-							key={step.title}
-							className="flex flex-col items-center text-center p-8 bg-white/80 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow"
-							initial={{ opacity: 0, y: 40 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, delay: idx * 0.1 }}
+
+			{/* Services Preview */}
+			<section className="py-24 bg-white">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-16">
+						<h2 className="text-4xl font-bold text-gray-900 mb-4">
+							Our AI Solutions
+						</h2>
+						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+							From workflow automation to custom AI models, we deliver
+							cutting-edge solutions tailored to your business needs.
+						</p>
+					</div>
+
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+						{[
+							{
+								icon: <Zap className="w-6 h-6" />,
+								title: "Workflow Automation",
+								description: "Streamline processes with intelligent automation",
+								color: "from-blue-500 to-cyan-500",
+							},
+							{
+								icon: <Bot className="w-6 h-6" />,
+								title: "Chatbot Development",
+								description: "24/7 customer support with AI assistants",
+								color: "from-purple-500 to-pink-500",
+							},
+							{
+								icon: <Brain className="w-6 h-6" />,
+								title: "AI Consulting",
+								description: "Strategic guidance for AI transformation",
+								color: "from-green-500 to-emerald-500",
+							},
+							{
+								icon: <Target className="w-6 h-6" />,
+								title: "Custom AI Models",
+								description: "Domain-specific LLM fine-tuning",
+								color: "from-orange-500 to-red-500",
+							},
+						].map((service, index) => (
+							<div
+								key={service.title}
+								className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+							>
+								<div
+									className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-6`}
+								>
+									{service.icon}
+								</div>
+								<h3 className="text-xl font-semibold text-gray-900 mb-3">
+									{service.title}
+								</h3>
+								<p className="text-gray-600 mb-6">{service.description}</p>
+								<Link
+									to="/services"
+									className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group-hover:translate-x-1 transition-transform"
+								>
+									Learn More
+									<ChevronRight className="ml-1 w-4 h-4" />
+								</Link>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Why Choose Us */}
+			<section className="py-24 bg-gradient-to-br from-purple-900 to-indigo-900">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+						<div>
+							<h2 className="text-4xl font-bold text-white mb-8">
+								Why Choose INTROVERTED.AI?
+							</h2>
+							<div className="space-y-6">
+								{[
+									"Proven track record with 50+ successful implementations",
+									"Custom solutions tailored to your specific industry",
+									"24/7 ongoing support and maintenance",
+									"ROI-focused approach with measurable results",
+									"Cutting-edge AI technologies and best practices",
+								].map((benefit, index) => (
+									<div key={index} className="flex items-center space-x-4">
+										<CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+										<span className="text-gray-300 text-lg">{benefit}</span>
+									</div>
+								))}
+							</div>
+
+							<Link
+								to="/about"
+								className="inline-flex items-center px-6 py-3 mt-8 bg-white text-purple-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+							>
+								Learn About Our Process
+								<ArrowRight className="ml-2 w-5 h-5" />
+							</Link>
+						</div>
+
+						<div className="relative">
+							<div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+								<div className="space-y-6">
+									<div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+										<span className="text-white">Process Efficiency</span>
+										<span className="text-green-400 font-bold">+150%</span>
+									</div>
+									<div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+										<span className="text-white">Cost Savings</span>
+										<span className="text-green-400 font-bold">-70%</span>
+									</div>
+									<div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+										<span className="text-white">Response Time</span>
+										<span className="text-green-400 font-bold">24/7</span>
+									</div>
+									<div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+										<span className="text-white">Error Reduction</span>
+										<span className="text-green-400 font-bold">-95%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* CTA Section */}
+			<section className="py-24 bg-white">
+				<div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+					<h2 className="text-4xl font-bold text-gray-900 mb-6">
+						Ready to Transform Your Business?
+					</h2>
+					<p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+						Join hundreds of businesses that have revolutionized their operations
+						with our AI solutions.
+					</p>
+
+					<div className="flex flex-col sm:flex-row gap-4 justify-center">
+						<Link
+							to="/pricing"
+							className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
 						>
-							{step.icon}
-							<h3 className="text-2xl font-bold mb-2 text-[#001F3F]">
-								{step.title}
-							</h3>
-							<p className="text-gray-700 text-base">{step.desc}</p>
-						</motion.div>
-					))}
-				</motion.div>
+							View Pricing Plans
+							<ArrowRight className="ml-2 w-5 h-5" />
+						</Link>
+
+						<Link
+							to="/portfolio"
+							className="inline-flex items-center px-8 py-4 border-2 border-purple-600 text-purple-600 font-semibold rounded-full hover:bg-purple-600 hover:text-white transition-all duration-300"
+						>
+							See Case Studies
+						</Link>
+					</div>
+				</div>
 			</section>
 		</div>
 	);

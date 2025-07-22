@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
 
 const services = [
@@ -92,19 +93,31 @@ const Services: React.FC = () => (
 		/>
 		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 			{services.map((service, idx) => (
-				<div
+				<motion.div
 					key={service.title}
-					className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition-transform transform hover:-translate-y-2 hover:shadow-xl hover:bg-blue-50 duration-200"
+					className="bg-white/80 backdrop-blur rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform hover:scale-105 hover:shadow-2xl duration-200"
+					initial={{ opacity: 0, y: 40 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					whileHover={{
+						scale: 1.05,
+						boxShadow: "0 8px 32px 0 rgba(70,130,180,0.15)",
+					}}
+					viewport={{ once: true }}
+					transition={{ duration: 0.5, delay: idx * 0.1 }}
 				>
 					{service.icon}
 					<h3 className="text-xl font-semibold mb-2 text-gray-900">
 						{service.title}
 					</h3>
 					<p className="text-gray-600 mb-4">{service.description}</p>
-					<button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+					<motion.button
+						className="mt-auto px-4 py-2 bg-gradient-to-r from-[#001F3F] to-[#4682B4] text-white rounded-lg font-semibold shadow hover:scale-105 hover:shadow-blue-400/40 transition-all"
+						whileHover={{ scale: 1.07 }}
+						whileTap={{ scale: 0.97 }}
+					>
 						Learn More
-					</button>
-				</div>
+					</motion.button>
+				</motion.div>
 			))}
 		</div>
 	</div>
