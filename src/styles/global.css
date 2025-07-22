@@ -1,0 +1,120 @@
+/* src/styles/global.css - World-Class Custom Styles for INTROVERTED.AI */
+
+/* Glassmorphism card utility */
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Animated gradient border utility */
+.animated-gradient-border {
+  position: relative;
+  z-index: 1;
+}
+.animated-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, #a78bfa, #f472b6, #38bdf8, #a78bfa);
+  background-size: 300% 300%;
+  animation: border-gradient-move 6s ease-in-out infinite;
+}
+@keyframes border-gradient-move {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Neon text effect */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 8px #a78bfa, 0 0 16px #f472b6, 0 0 32px #38bdf8;
+}
+
+/* Card hover lift and glow */
+.card-lift-glow {
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+}
+.card-lift-glow:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 32px 0 rgba(168, 85, 247, 0.18), 0 2px 8px 0 rgba(236, 72, 153, 0.12);
+}
+
+/* Animated underline for nav links */
+.animated-underline {
+  position: relative;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  transition: width 0.3s, left 0.3s;
+}
+.animated-underline:hover::after, .animated-underline.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Button shadow and glow */
+.btn-glow {
+  box-shadow: 0 4px 24px 0 rgba(168, 85, 247, 0.18), 0 1.5px 6px 0 rgba(236, 72, 153, 0.12);
+  transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+}
+.btn-glow:hover {
+  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.28), 0 3px 12px 0 rgba(236, 72, 153, 0.18);
+}
+
+/* Section fade-in animation */
+@keyframes section-fade-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section-fade-in {
+  animation: section-fade-in 1s cubic-bezier(.4,0,.2,1);
+}
+
+/* Responsive container utility */
+.responsive-container {
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Custom gradient backgrounds */
+.bg-hero-gradient {
+  background: linear-gradient(120deg, #0f172a 0%, #a78bfa 60%, #f472b6 100%);
+}
+.bg-section-gradient {
+  background: linear-gradient(120deg, #f1f5f9 0%, #e0e7ef 100%);
+}
+
+/* Utility for glassmorphic nav bar */
+.nav-glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(168,85,247,0.08);
+}
+
+/* Utility for animated blobs */
+.animated-blob {
+  filter: blur(48px);
+  opacity: 0.25;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-24px); }
+}
