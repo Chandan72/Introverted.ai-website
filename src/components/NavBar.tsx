@@ -7,8 +7,8 @@ const menuItems = [
   { name: "Portfolio", to: "/portfolio" },
   { name: "Pricing", to: "/pricing" },
   { name: "About", to: "/about" },
-  { name: "Contact", to: "/contact" }, // Changed from '#' to '/contact'
-  { name: "FAQ", to: "#" },
+  { name: "Contact", to: "/contact" },
+  { name: "FAQ", to: "/faq" }, // Changed from '#' to '/faq'
 ];
 
 const NavBar: React.FC = () => {
