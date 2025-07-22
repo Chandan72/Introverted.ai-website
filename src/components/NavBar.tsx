@@ -7,7 +7,7 @@ const menuItems = [
   { name: "Portfolio", to: "/portfolio" },
   { name: "Pricing", to: "/pricing" },
   { name: "About", to: "/about" },
-  { name: "Contact", to: "#" },
+  { name: "Contact", to: "/contact" }, // Changed from '#' to '/contact'
   { name: "FAQ", to: "#" },
 ];
 
